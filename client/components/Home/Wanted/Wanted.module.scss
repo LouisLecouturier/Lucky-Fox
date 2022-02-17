@@ -1,0 +1,101 @@
+@import "../../../styles/variables.scss";
+
+.thumbnail {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  row-gap: 16px;
+  min-width: calc(180px + 1vw);
+  width: fit-content;
+  padding: 32px 16px;
+  text-align: center;
+  color: $text-400;
+  cursor: pointer;
+}
+
+.wanted {
+  margin: 0;
+}
+
+.thumbnailContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.thumbnailName {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  background-color: red;
+}
+
+.background {
+  position: absolute;
+  transform: translateY(-32px);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.background.a {
+  position: absolute;
+  transform: rotate(180deg) translateY(32px);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnailContainer {
+  width: fit-content;
+  height: fit-content;
+  transform-origin: top;
+}
+
+.thumbnailContainer:hover {
+  animation: wind 2.5s 0.05s ease-in-out forwards;
+}
+
+@keyframes wind {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  10% {
+    transform: scale(1.05) rotate(5deg);
+  }
+  20% {
+    transform: scale(1.05) rotate(-5deg);
+  }
+  30% {
+    transform: scale(1.05) rotate(2.5deg);
+  }
+  40% {
+    transform: scale(1.05) rotate(-2.5deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  60% {
+    transform: scale(1.05) rotate(-1deg);
+  }
+  70% {
+    transform: scale(1.05) rotate(0.5deg);
+  }
+  80% {
+    transform: scale(1.05) rotate(-0.5deg);
+  }
+  90% {
+    transform: scale(1.05) rotate(0.25deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(0);
+  }
+}

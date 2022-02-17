@@ -1,0 +1,154 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  padding: 80px 16px;
+  box-sizing: border-box;
+  background-color: $text-900;
+  color: $text-400;
+  overflow-y: scroll;
+  animation: slide 1.5s ease forwards;
+}
+
+.hidden {
+  opacity: 1;
+  animation: opacity 0.5s ease reverse;
+}
+
+.close {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  top: 40px;
+  right: 16px;
+  opacity: 0;
+  animation: opacity 0.5s 1.5s ease forwards;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+@keyframes slide {
+  from {
+    padding: 0;
+    max-width: 0;
+  }
+
+  to {
+    max-width: 100vw;
+  }
+}
+@keyframes slideReverse {
+  from {
+    max-width: 100vw;
+  }
+
+  to {
+    padding: 0;
+    max-width: 0;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.header {
+  border-bottom: 4px solid $text-400;
+  padding-bottom: 16px;
+  opacity: 0;
+  animation: opacity 0.5s 1.5s ease forwards;
+}
+
+.img {
+  margin: 40px auto;
+  aspect-ratio: 1;
+  background-color: $text-400;
+  width: clamp(200px, 50%, 600px);
+  opacity: 0;
+  animation: opacity 0.5s 2s ease forwards;
+}
+
+.wanted {
+  letter-spacing: 0.1rem;
+  font-size: calc(3rem + 1vw);
+  text-align: center;
+  margin: 0;
+}
+
+.content {
+  border-top: 4px solid $text-400;
+  opacity: 0;
+  animation: opacity 0.5s 2.5s ease forwards;
+}
+
+.contentHeader {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding: 16px 0;
+  border-bottom: 2px solid $text-400;
+}
+
+.name {
+  text-align: center;
+  font-style: italic;
+  font-size: calc(1.5rem + 0.5vw);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.position {
+  margin: 0;
+  text-align: center;
+}
+
+.text {
+  text-align: justify;
+  font-weight: 500;
+  opacity: 0;
+
+  animation: opacity 0.5s 3s ease forwards;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    padding: 120px 10vw;
+  }
+
+  .close {
+    right: 10vw;
+  }
+}
+@media screen and (min-width: 430px) {
+  .container {
+    padding: 120px 20vw;
+  }
+  .close {
+    right: 20vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 120px 25vw;
+  }
+  .close {
+    right: 25vw;
+  }
+}
