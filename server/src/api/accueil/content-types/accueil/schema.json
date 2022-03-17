@@ -1,0 +1,88 @@
+{
+  "kind": "singleType",
+  "collectionName": "accueils",
+  "info": {
+    "singularName": "accueil",
+    "pluralName": "accueils",
+    "displayName": "Accueil",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string",
+      "default": "Lucky Fox",
+      "required": true
+    },
+    "heroSubtitle": {
+      "type": "string",
+      "required": true,
+      "default": "Liste BDE 2022-2023"
+    },
+    "eventTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Programmation"
+    },
+    "eventText": {
+      "type": "text",
+      "required": true,
+      "default": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis aliquam omnis, eveniet sed dolorum alias quis ratione labore, id voluptatem vero? Rem corporis commodi mollitia animi assumenda necessitatibus exercitationem tempore. Esse omnis a ullam rerum ducimus autem exercitationem, voluptatem nam harum deleniti? A temporibus blanditiis aperiam quam repudiandae labore atque impedit pariatur vero autem, ad suscipit illum quisquam, recusandae cumque molestias! Amet, sit! Ut quasi architecto numquam suscipit repellat minima dignissimos laborum sint, esse vel? Facere quo ex, cumque reiciendis rem modi similique ullam atque ea cum debitis, maxime quia tempora ducimus incidunt. Consectetur quia rerum veritatis facilis repellendus nisi!"
+    },
+    "eventImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "teamTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Notre équipe"
+    },
+    "teamText": {
+      "type": "text",
+      "required": true,
+      "default": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis aliquam omnis, eveniet sed dolorum alias quis ratione labore, id voluptatem vero? Rem corporis commodi mollitia animi assumenda necessitatibus exercitationem tempore. Esse omnis a ullam rerum ducimus autem exercitationem, voluptatem nam harum deleniti? A temporibus blanditiis aperiam quam repudiandae labore atque impedit pariatur vero autem, ad suscipit illum quisquam, recusandae cumque molestias! Amet, sit! Ut quasi architecto numquam suscipit repellat minima dignissimos laborum sint, esse vel? Facere quo ex, cumque reiciendis rem modi similique ullam atque ea cum debitis, maxime quia tempora ducimus incidunt. Consectetur quia rerum veritatis facilis repellendus nisi!"
+    },
+    "teamImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "partnersTitle": {
+      "type": "string",
+      "unique": true,
+      "default": "Nos partenaires"
+    },
+    "partnersText": {
+      "type": "text",
+      "required": true,
+      "default": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis aliquam omnis, eveniet sed dolorum alias quis ratione labore, id voluptatem vero? Rem corporis commodi mollitia animi assumenda necessitatibus exercitationem tempore. Esse omnis a ullam rerum ducimus autem exercitationem, voluptatem nam harum deleniti? A temporibus blanditiis aperiam quam repudiandae labore atque impedit pariatur vero autem, ad suscipit illum quisquam, recusandae cumque molestias! Amet, sit! Ut quasi architecto numquam suscipit repellat minima dignissimos laborum sint, esse vel? Facere quo ex, cumque reiciendis rem modi similique ullam atque ea cum debitis, maxime quia tempora ducimus incidunt. Consectetur quia rerum veritatis facilis repellendus nisi!"
+    },
+    "partnersImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bannerImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

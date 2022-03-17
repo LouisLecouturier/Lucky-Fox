@@ -8,13 +8,14 @@
   flex-direction: column;
   background: transparent;
   backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease;
 }
 
 .headerShadow {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background: linear-gradient(
@@ -33,7 +34,9 @@
   }
 }
 .headerContainer.mobileNavIsShown {
-  box-shadow: 0 0 0 100000px rgba($color: #000000, $alpha: 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
+
+  box-shadow: 0 0 0 100000px rgba($color: #000000, $alpha: 0.15);
   backdrop-filter: blur(5px);
 }
 
@@ -112,18 +115,19 @@
 
 .mobileNavContainer.mobileNavIsShown {
   transition: all 0.5s ease;
-  max-height: 100px;
+  max-height: 234px;
 }
 
 .mobileNav {
   z-index: 50;
   inset: 0;
   width: 100%;
-  height: 100%t;
+  height: 100%;
   display: flex;
   flex-direction: column;
   color: $white;
   font-weight: 500;
+  padding: 16px 0;
 
   a {
     padding: 16px;

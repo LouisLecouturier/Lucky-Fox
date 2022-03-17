@@ -10,6 +10,14 @@
   overflow: hidden;
 }
 
+.shadow {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.25);
+}
+
 .heroImg {
   position: relative;
   z-index: 0;
@@ -23,7 +31,7 @@
 .heroShadow::after {
   content: "";
   position: absolute;
-  z-index: 50;
+  z-index: 1;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -55,6 +63,7 @@
 .heroContent {
   color: $white;
   margin: 0 10vw;
+  z-index: 2;
 
   * {
     margin: 0;
@@ -75,9 +84,9 @@
 
 .heroTitle {
   transform: translateY(200%);
-  font-size: calc(4rem + 1vw);
+  font-size: calc(3rem + 1.5vw);
   z-index: 3;
-
+  word-break: break-word;
   animation: textReveal 1s ease 0.5s forwards;
 }
 .heroSubTitle {

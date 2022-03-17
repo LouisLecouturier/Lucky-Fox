@@ -1,5 +1,8 @@
 module.exports = {
   reactStrictMode: true,
+  images: {
+    domains: ["localhost"],
+  },
   webpack(config, options) {
     config.module.rules.push({
       test: /\.svg$/i,

@@ -43,12 +43,25 @@ h2 {
 }
 
 .dark {
-  background-color: $text-100;
+  background-color: $text-200;
   color: $white;
 }
 
+.full-width {
+  width: 100%;
+}
+.row {
+  display: flex;
+  gap: 40px;
+}
+
 .section {
+  display: flex;
+  flex-direction: column;
   padding: 80px 10vw;
+  min-height: 100vh;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .sectionTitle {

@@ -7,9 +7,9 @@ import Sound from "../../../assets/icons/sound.svg";
 
 import useSound from "use-sound";
 
-const Hero = ({ imageURL, title, text, isIndex }) => {
+const Hero = ({ imageURL, shadow, title, text, isIndex }) => {
   const [playSound, { stop }] = useSound("/sounds/onloadSound.mp3", {
-    volume: 0.2,
+    volume: 0.25,
   });
 
   const play = () => {
@@ -20,6 +20,7 @@ const Hero = ({ imageURL, title, text, isIndex }) => {
   return (
     <section className={styles.hero}>
       <Image className={styles.heroImg} src={imageURL} layout="fill" />
+      {shadow && <div className={styles.shadow}></div>}
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
           <div className={styles.textContainer}>

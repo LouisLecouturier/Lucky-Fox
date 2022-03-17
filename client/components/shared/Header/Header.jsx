@@ -1,6 +1,7 @@
 import styles from "./Header.module.scss";
 
 import useClickedOutside from "../../../hooks/useClickOutside";
+import Link from "next/link";
 
 const Header = () => {
   const { target, button, isShown, setIsShown } = useClickedOutside();
@@ -27,16 +28,24 @@ const Header = () => {
         <nav className={styles.desktopNav}>
           <ul>
             <li>
-              <a className={styles.headerLink}>Accueil</a>
+              <Link href="/">
+                <a className={styles.headerLink}>Accueil</a>
+              </Link>
             </li>
             <li>
-              <a className={styles.headerLink}>Programmation</a>
+              <Link href="/programmation">
+                <a className={styles.headerLink}>Programmation</a>
+              </Link>
             </li>
             <li>
-              <a className={styles.headerLink}>Équipes</a>
+              <Link href="/equipe">
+                <a className={styles.headerLink}>Équipes</a>
+              </Link>
             </li>
             <li>
-              <a className={styles.headerLink}>Partenaires</a>
+              <Link href="/partenaires">
+                <a className={styles.headerLink}>Partenaires</a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -50,9 +59,20 @@ const Header = () => {
         }`}
       >
         <nav className={styles.mobileNav}>
-          <a>Yeet</a>
-          <a>Yeet</a>
-          <a>Yeet</a>
+          <Link href="/">
+            <a className={styles.headerLink}>Accueil</a>
+          </Link>
+          <Link href="/programmation">
+            <a className={styles.headerLink}>Programmation</a>
+          </Link>
+
+          <Link href="/equipe">
+            <a className={styles.headerLink}>Équipes</a>
+          </Link>
+
+          <Link href="/partenaires">
+            <a className={styles.headerLink}>Partenaires</a>
+          </Link>
         </nav>
       </div>
     </div>

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "poles",
+  "info": {
+    "singularName": "pole",
+    "pluralName": "poles",
+    "displayName": "Pôle"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "membres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membre.membre"
+    }
+  }
+}

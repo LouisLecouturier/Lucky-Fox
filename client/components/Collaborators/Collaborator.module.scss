@@ -1,0 +1,126 @@
+@import "../../styles/variables.scss";
+
+.container {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  bottom: 0;
+  background-color: $white;
+  height: 75vh;
+  padding: 40px 10vw;
+  overflow-y: scroll;
+  box-shadow: 0 0 80px rgba($color: #000, $alpha: 0.15);
+  box-sizing: border-box;
+  max-height: 0;
+  animation: appear 1.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.closeContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform: translateZ(0);
+}
+
+.headClose {
+  background-color: $white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  height: 40px;
+  width: 100%;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.popup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: fit-content;
+  padding: 40px 0;
+
+  * {
+    font-family: "Raleway", sans-serif;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+  row-gap: 32px;
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 160px;
+}
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin: 0;
+    white-space: pre-wrap;
+    line-height: 2rem;
+  }
+}
+
+@keyframes appear {
+  0% {
+    max-height: 0;
+    padding: 0 10vw;
+  }
+
+  100% {
+    padding: 40px 10vw;
+    max-height: 75vh;
+  }
+}
+@keyframes vanish {
+  0% {
+    padding: 40px 10vw;
+    max-height: 75vh;
+  }
+
+  100% {
+    padding: 0 10vw;
+    max-height: 0;
+  }
+}
+
+.vanish {
+  animation: vanish 1.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .close {
+    top: 40px;
+    right: 40px;
+  }
+}

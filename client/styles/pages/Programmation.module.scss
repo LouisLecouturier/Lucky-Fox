@@ -1,0 +1,91 @@
+@import "../variables.scss";
+
+.sectionLink {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  column-gap: 8px;
+  margin: 40px 0 0 0 !important;
+  transition: all 0.2s ease;
+}
+
+.sectionLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background-color: currentColor;
+  border-radius: 100px;
+  max-width: 0;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.sectionLink:hover {
+  column-gap: 12px;
+  transition: all 0.2s ease;
+
+  &::after {
+    max-width: 100%;
+    opacity: 1;
+    transition: all 0.2s ease;
+  }
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+}
+
+.eventList {
+  padding: 0;
+  list-style-type: none;
+
+  li:last-child {
+    border: none;
+  }
+}
+
+.eventImage {
+  position: relative;
+  aspect-ratio: 99/140;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+.eventImage:hover {
+  transform: scale(1.025);
+  transition: all 0.2s ease;
+}
+
+.event {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  padding: 32px 0;
+  column-gap: 32px;
+  border-bottom: 4px solid $white;
+}
+
+.event .eventDate {
+  font-size: 1.2rem;
+}
+
+.eventName {
+  font-size: 2rem;
+  margin: 32px 0 16px 0;
+}
+
+
+@media screen and (min-width: 550px) {
+  .eventImage {
+    width: 160px;
+  }
+
+  .eventName {
+    font-size: 2rem;
+    margin: 0 0 16px 0;
+  }
+}

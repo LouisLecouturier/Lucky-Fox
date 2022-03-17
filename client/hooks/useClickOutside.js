@@ -1,12 +1,15 @@
 import { useEffect, useState, useRef } from "react";
 
-export default function useClickOutside() {
+export default function useClickOutside(initialState) {
   const target = useRef();
   const button = useRef();
 
-  const [isShown, setIsShown] = useState(false);
+  const [isShown, setIsShown] = useState(initialState);
 
   useEffect(() => {
+    // setIsShown(initialState && initialState.value);
+    // console.log(initialState && initialState.value);
+
     const checkIfClickedOutside = (e) => {
       // If the menu is open and the clicked target is not within the menu,
       // then close the menu

@@ -2,15 +2,23 @@ import styles from "./Pole.module.scss";
 
 import Wanted from "../Wanted/Wanted";
 
-const Pole = ({ title }) => {
+const Pole = ({ name, members }) => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Communication</h2>
+      <h2 className={styles.title}>{name}</h2>
 
       <div className={styles.listContainer}>
         <div className={styles.list}>
-          <Wanted name={"Lucas Lacoste"} position="Président" />
-          <Wanted name={"Romain Roux"} position="Vice-Président" />
+          {members.map((member) => {
+            return (
+              <Wanted
+                key={member.id}
+                name={member.attributes.name}
+                position={member.attributes.role}
+                text={member.attributes.description}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

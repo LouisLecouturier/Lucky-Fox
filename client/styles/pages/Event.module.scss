@@ -1,0 +1,54 @@
+.hero {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 99/140;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.8);
+}
+
+.mobileImage,
+.desktopImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopImageContainer {
+  display: none;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.name {
+  font-size: calc(2.5rem + 1vw);
+}
+
+.date {
+  font-size: 1.5rem;
+}
+
+.eventSection {
+  h3 {
+    margin: 0;
+  }
+  margin: 24px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .mobileImageContainer {
+    display: none;
+  }
+  .desktopImageContainer {
+    display: block;
+  }
+
+  .hero {
+    aspect-ratio: 21/10;
+  }
+}

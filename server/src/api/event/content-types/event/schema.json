@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "Event"
+    "displayName": "Event",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,19 +13,67 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
+      "type": "string",
+      "required": true
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "desktopImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "startTime": {
+      "type": "time",
+      "required": true,
+      "default": "00:00"
+    },
+    "endTime": {
+      "type": "time",
+      "required": true,
+      "default": "00:00"
+    },
+    "dressCode": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": false
+    },
+    "guestPrice": {
       "type": "string"
     },
     "description": {
-      "type": "richtext"
+      "type": "text",
+      "required": true
     },
-    "images": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "type": "media",
-      "multiple": true
+    "notes": {
+      "type": "text",
+      "required": false
+    },
+    "address": {
+      "type": "string"
     }
   }
 }

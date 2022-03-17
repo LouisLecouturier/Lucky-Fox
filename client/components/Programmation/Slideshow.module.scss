@@ -1,0 +1,175 @@
+@import "../../styles/variables.scss";
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.slideshow {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+
+  overflow: hidden;
+}
+
+.arrow {
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: drop-shadow(silver 15px 15px 5px);
+  filter: drop-shadow(rgba(255, 0, 0, 0.5) 0px 0px 40px);
+
+  path {
+    stroke-width: 4;
+  }
+}
+
+.leftArrow {
+  display: none;
+  transform: rotate(90deg);
+  left: 2.5vw;
+  cursor: pointer;
+}
+.rightArrow {
+  display: none;
+  transform: rotate(-90deg);
+  right: 2.5vw;
+  cursor: pointer;
+}
+
+.event {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
+  max-height: 100vh;
+
+  scroll-snap-align: center;
+  aspect-ratio: 99/140;
+  padding: 40px 12.5vw;
+  box-sizing: border-box;
+}
+
+.radios {
+  display: none;
+}
+
+.selectors {
+  position: absolute;
+  display: flex;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+
+  label:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.radioControl {
+  width: 16px;
+  height: 16px;
+  border: 3px solid $white;
+  border-radius: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.2s ease;
+}
+
+.radioControl:hover {
+  background-color: rgba($color: $white, $alpha: 0.25);
+  transition: all 0.2s ease;
+}
+
+.radioControl.checked {
+  background-color: $white;
+  transition: all 0.2s ease;
+}
+
+.first {
+  --offset: 0%;
+  margin-left: var(--offset);
+  transition: all 1.5s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #fff;
+  font-size: calc(1rem + 0.75vw);
+
+  h3 {
+    margin: 0 0 16px 0;
+    font-size: calc(2.5rem + 1vw) !important;
+  }
+}
+
+.imageContainer {
+  position: absolute;
+
+  inset: 0;
+  z-index: 0;
+  filter: brightness(0.75);
+}
+.desktopImgContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.desktopImg {
+  object-fit: cover;
+  display: none;
+}
+
+.mobileImgContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+}
+
+.mobileImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+}
+
+@media screen and (min-width: 600px) {
+  .leftArrow,
+  .rightArrow {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: auto;
+  }
+  .slideshow {
+    aspect-ratio: 21/10;
+    height: auto;
+    min-height: unset;
+  }
+
+  .desktopImgContainer {
+    display: flex;
+  }
+
+  .mobileImgContainer {
+    display: none;
+  }
+}
