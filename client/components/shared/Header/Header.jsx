@@ -33,8 +33,8 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/programmation">
-                <a className={styles.headerLink}>Programmation</a>
+              <Link href="/programme">
+                <a className={styles.headerLink}>Programme</a>
               </Link>
             </li>
             <li>
@@ -45,6 +45,11 @@ const Header = () => {
             <li>
               <Link href="/partenaires">
                 <a className={styles.headerLink}>Partenaires</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a className={styles.headerLink}>Contact</a>
               </Link>
             </li>
           </ul>
@@ -62,8 +67,8 @@ const Header = () => {
           <Link href="/">
             <a className={styles.headerLink}>Accueil</a>
           </Link>
-          <Link href="/programmation">
-            <a className={styles.headerLink}>Programmation</a>
+          <Link href="/programme">
+            <a className={styles.headerLink}>Programme</a>
           </Link>
 
           <Link href="/equipe">
@@ -72,6 +77,9 @@ const Header = () => {
 
           <Link href="/partenaires">
             <a className={styles.headerLink}>Partenaires</a>
+          </Link>
+          <Link href="/contact">
+            <a className={styles.headerLink}>Contact</a>
           </Link>
         </nav>
       </div>

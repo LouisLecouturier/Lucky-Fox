@@ -38,8 +38,8 @@ const Footer = ({ dark }) => {
               <Link href="/">
                 <a className={styles.headerLink}>Accueil</a>
               </Link>
-              <Link href="/programmation">
-                <a className={styles.headerLink}>Programmation</a>
+              <Link href="/programme">
+                <a className={styles.headerLink}>Programme</a>
               </Link>
 
               <Link href="/equipe">

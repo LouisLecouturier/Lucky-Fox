@@ -7,7 +7,9 @@ import Sound from "../../../assets/icons/sound.svg";
 
 import useSound from "use-sound";
 
-const Hero = ({ imageURL, shadow, title, text, isIndex }) => {
+import logo from "../../../assets/images/logo/logo.webp";
+
+const Hero = ({ imageURL, shadow, title, text, isIndex, isProgram }) => {
   const [playSound, { stop }] = useSound("/sounds/onloadSound.mp3", {
     volume: 0.25,
   });
@@ -24,7 +26,11 @@ const Hero = ({ imageURL, shadow, title, text, isIndex }) => {
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
           <div className={styles.textContainer}>
-            <h1 className={styles.heroTitle}>{title}</h1>
+            <h1
+              className={`${styles.heroTitle} ${isProgram && styles.program}`}
+            >
+              {title}
+            </h1>
           </div>
           {text && (
             <div className={styles.textContainer}>
@@ -32,7 +38,11 @@ const Hero = ({ imageURL, shadow, title, text, isIndex }) => {
             </div>
           )}
         </div>
-
+        {isIndex && (
+          <div className={styles.logoContainer}>
+            <Image src={logo} className={styles.logo} />
+          </div>
+        )}
         <div className={styles.heroShadow}></div>
       </div>
       {isIndex && <Sound onClick={() => play()} className={styles.soundIcon} />}

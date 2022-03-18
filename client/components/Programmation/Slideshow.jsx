@@ -15,8 +15,6 @@ const Slideshow = ({ events }) => {
     "--offset": selectedIndex * -100 + "%",
   };
 
-  useEffect(() => console.log(events), []);
-
   useEffect(() => {
     let timeOut = setTimeout(() => {
       if (selectedIndex < events.slice(0, 3).length - 1) {
@@ -59,6 +57,7 @@ const Slideshow = ({ events }) => {
               {events.slice(0, 3).map((event, index) => {
                 return (
                   <label
+                    key={index}
                     htmlFor={index}
                     onClick={() => setSelectedIndex(index)}
                     className={`${styles.radioControl} ${
@@ -75,6 +74,7 @@ const Slideshow = ({ events }) => {
                 {events.slice(0, 3).map((event, index) => {
                   return (
                     <input
+                      key={index}
                       type="radio"
                       name="slideshow"
                       id={index}
@@ -131,9 +131,9 @@ const Slideshow = ({ events }) => {
               </Link>
             )}
             {events.length > 1 &&
-              events.slice(1, 3).map((event) => {
+              events.slice(1, 3).map((event, index) => {
                 return (
-                  <Link href={`/event/${event.id}`}>
+                  <Link href={`/event/${event.id}`} key={index}>
                     <div className={`${styles.event}`}>
                       <div className={styles.imageContainer}>
                         <div className={styles.desktopImgContainer}>

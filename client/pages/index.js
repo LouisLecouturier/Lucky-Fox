@@ -35,12 +35,12 @@ export default function Home() {
       <main className="main">
         <section className="section">
           <h2 className={`sectionTitle ${styles.mobileTitle}`}>
-            Programmation
+            Programme
           </h2>
           <div className="sectionRow">
             <div>
               <h2 className={`sectionTitle ${styles.desktopTitle}`}>
-                Programmation
+                Programme
               </h2>
 
               <p className={styles.paragraph}>

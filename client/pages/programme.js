@@ -13,7 +13,6 @@ import Image from "next/image";
 import BigArrow from "../assets/icons/bigArrow.svg";
 
 import moment from "moment";
-import { useEffect, useState } from "react";
 
 export async function getServerSideProps(context) {
   const res = await api.get("/events?populate=*");
@@ -23,13 +22,16 @@ export async function getServerSideProps(context) {
   };
 }
 
-const Contact = () => {
-  const [data, setData] = useState(false);
-
+const Program = ({ data }) => {
   return (
     <>
       <Header />
-      <Hero imageURL={heroImage} shadow={true} title="Programmation" />
+      <Hero
+        imageURL={heroImage}
+        shadow={true}
+        isProgram={true}
+        title="Programme"
+      />
       <main>
         {data.length > 0 && <Slideshow events={data} />}
 
@@ -38,8 +40,8 @@ const Contact = () => {
           <ul className={styles.eventList}>
             {data.length > 0 ? (
               data.map((event) => (
-                <li className={styles.event}>
-                  <Link href="">
+                <li className={styles.event} key={event.id}>
+                  <Link href={`/event/${event.id}`}>
                     <a className={styles.eventImage}>
                       <Image
                         src={`http://localhost:1337${event.attributes.mobileImage.data.attributes.url}`}
@@ -111,4 +113,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Program;

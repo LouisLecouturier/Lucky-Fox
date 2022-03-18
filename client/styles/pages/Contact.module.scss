@@ -1,0 +1,30 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  * {
+    font-family: "Raleway", sans-serif;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: calc(1.5rem + 0.25vw);
+  }
+
+  h4 {
+    margin: 0 0 16px 0;
+  }
+}
+
+.members {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 80px;
+  column-gap: 160px;
+}

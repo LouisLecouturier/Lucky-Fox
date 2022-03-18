@@ -6,9 +6,8 @@ import heroImage from "../assets/images/home/group.jpg";
 import Pole from "../components/Home/Pole/Pole";
 import Footer from "../components/shared/Footer/Footer";
 import api from "../services/api";
-import { useEffect, useState } from "react";
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const res = await api.get("/poles?populate=*");
 
   return {
@@ -33,7 +32,6 @@ const Equipe = ({ poles }) => {
           <h2 className="sectionTitle">Notre équipe</h2>
 
           {poles.map((pole) => {
-            console.log(pole);
             return (
               <Pole
                 key={pole.id}
