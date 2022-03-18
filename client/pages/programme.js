@@ -16,21 +16,22 @@ import moment from "moment";
 
 export async function getServerSideProps(context) {
   const res = await api.get("/events?populate=*");
+  const pageData = await api.get("/programme?populate=*");
 
   return {
-    props: { data: res.data.data }, // will be passed to the page component as props
+    props: { data: res.data.data, pageData: pageData.data.data.attributes }, // will be passed to the page component as props
   };
 }
 
-const Program = ({ data }) => {
+const Program = ({ data, pageData }) => {
   return (
     <>
       <Header />
       <Hero
-        imageURL={heroImage}
+        imageURL={`http://localhost:1337${pageData.bannerImg.data.attributes.url}`}
         shadow={true}
         isProgram={true}
-        title="Programme"
+        title={pageData.bannerTitle}
       />
       <main>
         {data.length > 0 && <Slideshow events={data} />}

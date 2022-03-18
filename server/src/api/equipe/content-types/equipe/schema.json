@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "equipes",
+  "info": {
+    "singularName": "equipe",
+    "pluralName": "equipes",
+    "displayName": "Équipe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bannerTitle": {
+      "type": "string",
+      "default": "Notre équipe",
+      "required": true
+    },
+    "bannerImg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

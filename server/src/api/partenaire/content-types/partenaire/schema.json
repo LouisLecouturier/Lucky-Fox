@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "partenaires",
+  "info": {
+    "singularName": "partenaire",
+    "pluralName": "partenaires",
+    "displayName": "Partenaire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bannerTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Partenaires"
+    },
+    "bannerImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "textTitle": {
+      "type": "string",
+      "required": false
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

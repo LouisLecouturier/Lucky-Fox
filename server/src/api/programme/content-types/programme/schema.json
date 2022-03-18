@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "programmes",
+  "info": {
+    "singularName": "programme",
+    "pluralName": "programmes",
+    "displayName": "Programme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bannerImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "bannerTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Programme"
+    }
+  }
+}

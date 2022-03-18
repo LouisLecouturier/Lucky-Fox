@@ -13,6 +13,7 @@ const Pole = ({ name, members }) => {
             return (
               <Wanted
                 key={member.id}
+                id={member.id}
                 name={member.attributes.name}
                 position={member.attributes.role}
                 text={member.attributes.description}

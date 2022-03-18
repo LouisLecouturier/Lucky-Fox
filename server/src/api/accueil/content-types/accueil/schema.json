@@ -25,7 +25,7 @@
     "eventTitle": {
       "type": "string",
       "required": true,
-      "default": "Programmation"
+      "default": "Programme"
     },
     "eventText": {
       "type": "text",
@@ -77,12 +77,12 @@
       ]
     },
     "bannerImg": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

@@ -12,16 +12,21 @@ import BigArrow from "../assets/icons/bigArrow.svg";
 import Link from "next/link";
 import Footer from "../components/shared/Footer/Footer";
 import api from "../services/api";
+import Image from "next/image";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await api.get("/collaborateurs?populate=*");
+  const pageData = await api.get("/partenaire?populate=*");
 
   return {
-    props: { collaborators: res.data.data }, // will be passed to the page component as props
+    props: {
+      collaborators: res.data.data,
+      pageData: pageData.data.data.attributes,
+    },
   };
 }
 
-const Collaborators = ({ collaborators }) => {
+const Collaborators = ({ collaborators, pageData }) => {
   const [selected, setSelected] = useState(null);
 
   return (
@@ -33,30 +38,29 @@ const Collaborators = ({ collaborators }) => {
       </Head>
       <Header />
 
-      <Hero imageURL={heroImage} title="Nos partenaires" />
+      <Hero
+        imageURL={`http://localhost:1337${pageData.bannerImg.data.attributes.url}`}
+        title={pageData.bannerTitle}
+      />
 
       <main className="main">
-        <section className="section dark">
-          <h2 className="sectionTitle">Bla bla bla</h2>
-          <p className="paragraph">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-            aperiam a. Ut incidunt omnis molestias voluptatibus cupiditate.
-            Ducimus tempora reiciendis, quod ex modi tenetur eveniet fuga omnis
-            iure harum distinctio aliquam iste et beatae id, quo neque
-            consequuntur voluptates blanditiis deserunt labore enim. Quos error
-            sint aperiam ex unde? Aperiam, quaerat incidunt? Blanditiis magni
-            cum tenetur.
-          </p>
-        </section>
+        {pageData.textTitle && pageData.text && (
+          <section className="section dark">
+            <h2 className="sectionTitle">{pageData.textTitle}</h2>
+            <p className="paragraph">{pageData.text}</p>
+          </section>
+        )}
         <section className="section">
           <h2 className="sectionTitle">Nos partenaires</h2>
           <div className={styles.list}>
             {collaborators.map((collaborator) => (
               <div
                 className={styles.logo}
+                key={collaborator.id}
                 onClick={() => setSelected(collaborator)}
               >
-                <img
+                <Image
+                  layout="fill"
                   title={collaborator.attributes.name}
                   src={`http://localhost:1337${collaborator.attributes.logo.data[0].attributes.url}`}
                 />
@@ -76,6 +80,7 @@ const Collaborators = ({ collaborators }) => {
         </section>
         {selected && (
           <Collaborator
+            key={selected.id}
             logoURL={`http://localhost:1337${selected.attributes.logo.data[0].attributes.url}`}
             name={selected.attributes.name}
             field={selected.attributes.service}

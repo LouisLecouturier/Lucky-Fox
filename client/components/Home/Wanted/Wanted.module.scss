@@ -14,6 +14,12 @@
   text-align: center;
   color: $text-400;
   cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
 .wanted {
@@ -32,10 +38,15 @@
 }
 
 .img {
-  width: 120px;
-  height: 120px;
+  object-fit: cover;
+}
+
+.imgContainer {
+  overflow: hidden;
+  position: relative;
+  width: 128px;
+  height: 128px;
   border-radius: 100%;
-  background-color: red;
 }
 
 .background {
@@ -60,42 +71,42 @@
   transform-origin: top;
 }
 
-.thumbnailContainer:hover {
+.animate {
   animation: wind 2.5s 0.05s ease-in-out forwards;
 }
 
 @keyframes wind {
   0% {
-    transform: scale(1) rotate(0);
+    transform: rotate(0);
   }
   10% {
-    transform: scale(1.05) rotate(5deg);
+    transform: rotate(5deg);
   }
   20% {
-    transform: scale(1.05) rotate(-5deg);
+    transform: rotate(-5deg);
   }
   30% {
-    transform: scale(1.05) rotate(2.5deg);
+    transform: rotate(2.5deg);
   }
   40% {
-    transform: scale(1.05) rotate(-2.5deg);
+    transform: rotate(-2.5deg);
   }
   50% {
-    transform: scale(1.05) rotate(1deg);
+    transform: rotate(1deg);
   }
   60% {
-    transform: scale(1.05) rotate(-1deg);
+    transform: rotate(-1deg);
   }
   70% {
-    transform: scale(1.05) rotate(0.5deg);
+    transform: rotate(0.5deg);
   }
   80% {
-    transform: scale(1.05) rotate(-0.5deg);
+    transform: rotate(-0.5deg);
   }
   90% {
-    transform: scale(1.05) rotate(0.25deg);
+    transform: rotate(0.25deg);
   }
   100% {
-    transform: scale(1.05) rotate(0);
+    transform: rotate(0);
   }
 }

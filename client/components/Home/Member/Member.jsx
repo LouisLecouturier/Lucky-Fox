@@ -3,6 +3,7 @@ import styles from "./Member.module.scss";
 import Close from "../../../assets/icons/close.svg";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const Member = ({ name, img, position, text, setIsShown }) => {
   const [isClosed, setIsClosed] = useState(false);
@@ -25,7 +26,9 @@ const Member = ({ name, img, position, text, setIsShown }) => {
       <header className={styles.header}>
         <h1 className={styles.wanted}>WANTED</h1>
       </header>
-      <div className={styles.img}></div>
+      <div className={styles.imgContainer}>
+        {img && <Image src={img} className={styles.image} layout="fill" />}
+      </div>
       <article className={styles.content}>
         <Close className={styles.close} onClick={handleClose} />
         <header className={styles.contentHeader}>
