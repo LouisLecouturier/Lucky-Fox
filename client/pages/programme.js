@@ -13,6 +13,7 @@ import Image from "next/image";
 import BigArrow from "../assets/icons/bigArrow.svg";
 
 import moment from "moment";
+import Head from "next/head";
 
 export async function getServerSideProps(context) {
   const res = await api.get("/events?populate=*");
@@ -26,6 +27,9 @@ export async function getServerSideProps(context) {
 const Program = ({ data, pageData }) => {
   return (
     <>
+      <Head>
+        <title>Lucky Fox | Programme</title>
+      </Head>
       <Header />
       <Hero
         imageURL={`http://localhost:1337${pageData.bannerImg.data.attributes.url}`}
