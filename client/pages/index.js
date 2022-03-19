@@ -34,8 +34,8 @@ export default function Home({ data }) {
   }, []);
 
   const handleMouseMove = (e) => {
-    setMoveX((width / 2 - e.clientX) * 0.05);
-    setMoveY((height / 2 - e.clientY) * 0.05);
+    setMoveX((width / 2 - e.clientX) * 0.025);
+    setMoveY((height / 2 - e.clientY) * 0.025);
   };
 
   return (

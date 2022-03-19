@@ -29,8 +29,39 @@
   width: 100%;
   font-weight: 500;
 
-  a {
+  .footerLink {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    column-gap: 8px;
     padding: 8px 0;
+    margin-bottom: 2px;
+    transition: all 0.2s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 3px;
+      background-color: currentColor;
+      border-radius: 100px;
+      max-width: 0;
+      transition: all 0.2s ease;
+      opacity: 0;
+    }
+
+    &:hover {
+      column-gap: 12px;
+      transition: all 0.2s ease;
+
+      &::after {
+        max-width: 100%;
+        opacity: 1;
+        transition: all 0.2s ease;
+      }
+    }
   }
 }
 

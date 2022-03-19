@@ -8,7 +8,10 @@ import Sound from "../../../assets/icons/sound.svg";
 import useSound from "use-sound";
 
 import logo from "../../../assets/images/logo/logo.webp";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+import cactus1 from "../../../assets/images/hero/cactus1.png";
+import cactus2 from "../../../assets/images/hero/cactus2.png";
 
 const Hero = ({
   imageURL,
@@ -26,8 +29,6 @@ const Hero = ({
 
   const [loaded, setLoaded] = useState(false);
 
-
-
   const play = () => {
     stop();
     playSound();
@@ -38,7 +39,6 @@ const Hero = ({
       setLoaded(true);
     }
   };
-
 
   return (
     <section className={styles.hero}>
@@ -62,6 +62,27 @@ const Hero = ({
             src={imageURL}
             layout="fill"
           />
+        </div>
+      )}
+
+      {isIndex && loaded && (
+        <div className={`${styles.cactusContainer} ${styles.a}`}>
+          <div
+            className={styles.cactus}
+            style={{ left: -moveX * 6, top: -moveY * 8 }}
+          >
+            <Image className={styles.cactusImg} src={cactus2} layout="fill" />
+          </div>
+        </div>
+      )}
+      {isIndex && loaded && (
+        <div className={`${styles.cactusContainer} ${styles.b}`}>
+          <div
+            className={styles.cactus}
+            style={{ left: -moveX * 12, top: -moveY * 3 }}
+          >
+            <Image className={styles.cactusImg} src={cactus1} layout="fill" />
+          </div>
         </div>
       )}
       <div className={styles.heroContainer}>

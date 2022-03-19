@@ -2,6 +2,9 @@ import styles from "./Header.module.scss";
 
 import useClickedOutside from "../../../hooks/useClickOutside";
 import Link from "next/link";
+import Image from "next/image";
+
+import logo from "../../../assets/images/logo/logoMin.webp";
 
 const Header = () => {
   const { target, button, isShown, setIsShown } = useClickedOutside();
@@ -55,7 +58,14 @@ const Header = () => {
           </ul>
         </nav>
 
-        <h2 ref={target}>Lucky Fox</h2>
+        <div className={styles.headerRight}>
+          <div className={styles.headerLogo}>
+            <Image src={logo} layout="fill" />
+          </div>
+          <h2 className={styles.headerLogoText} ref={target}>
+            Lucky Fox
+          </h2>
+        </div>
       </header>
       <div
         ref={target}

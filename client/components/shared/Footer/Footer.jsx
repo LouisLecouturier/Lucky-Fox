@@ -36,21 +36,21 @@ const Footer = ({ dark }) => {
             <h2 className={styles.title}>Naviguer</h2>
             <nav className={styles.nav}>
               <Link href="/">
-                <a className={styles.headerLink}>Accueil</a>
+                <a className={styles.footerLink}>Accueil</a>
               </Link>
               <Link href="/programme">
-                <a className={styles.headerLink}>Programme</a>
+                <a className={styles.footerLink}>Programme</a>
               </Link>
 
               <Link href="/equipe">
-                <a className={styles.headerLink}>Équipes</a>
+                <a className={styles.footerLink}>Équipes</a>
               </Link>
 
               <Link href="/partenaires">
-                <a className={styles.headerLink}>Partenaires</a>
+                <a className={styles.footerLink}>Partenaires</a>
               </Link>
               <Link href="/contact">
-                <a className={styles.headerLink}>Contact</a>
+                <a className={styles.footerLink}>Contact</a>
               </Link>
             </nav>
           </div>
