@@ -69,7 +69,7 @@ const Hero = ({
         <div className={`${styles.cactusContainer} ${styles.a}`}>
           <div
             className={styles.cactus}
-            style={{ left: -moveX * 6, top: -moveY * 8 }}
+            style={{ left: -moveX * 4, top: -moveY * 6 }}
           >
             <Image className={styles.cactusImg} src={cactus2} layout="fill" />
           </div>
@@ -79,7 +79,7 @@ const Hero = ({
         <div className={`${styles.cactusContainer} ${styles.b}`}>
           <div
             className={styles.cactus}
-            style={{ left: -moveX * 12, top: -moveY * 3 }}
+            style={{ left: -moveX * 8, top: -moveY * 3 }}
           >
             <Image className={styles.cactusImg} src={cactus1} layout="fill" />
           </div>
