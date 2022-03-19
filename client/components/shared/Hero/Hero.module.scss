@@ -150,7 +150,7 @@
     transform: translateY(200%);
   }
   75% {
-    transform: translateY(-15%);
+    transform: translateY(-10%);
   }
 
   100% {
@@ -161,13 +161,11 @@
 .cactusContainer {
   display: none;
   position: absolute;
-
   filter: sepia(0.5) brightness(0.75)
     drop-shadow(-20px 0 40px rgba(0, 0, 0, 0.5))
-    drop-shadow(80px 0 40px hsla(21, 53%, 50%, 0.05))
-    drop-shadow(80px 0 40px hsla(21, 53%, 70%, 0.1))
-    drop-shadow(30px 0 30px rgba(255, 255, 255, 0.15));
-
+    drop-shadow(80px 0 40px hsla(21, 53%, 50%, 0.025))
+    drop-shadow(80px 0 40px hsla(21, 53%, 70%, 0.05))
+    drop-shadow(30px 0 30px rgba(255, 255, 255, 0.1));
   transform: translateY(200%);
 
   &.a {
@@ -176,7 +174,7 @@
 
     z-index: 1;
     left: 10%;
-    bottom: -300px;
+    bottom: -400px;
     animation: cactusPop 1.5s 0.25s cubic-bezier(0.83, 0, 0.17, 1) forwards;
   }
 
