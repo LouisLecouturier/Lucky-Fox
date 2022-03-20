@@ -2,7 +2,6 @@ import Header from "../components/shared/Header/Header";
 import Footer from "../components/shared/Footer/Footer";
 import Hero from "../components/shared/Hero/Hero";
 
-import heroImage from "../assets/images/hero/event.jpg";
 import Slideshow from "../components/Programmation/Slideshow";
 import api from "../services/api";
 

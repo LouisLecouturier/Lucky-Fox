@@ -2,7 +2,6 @@ import Head from "next/head";
 import Header from "../components/shared/Header/Header";
 import Hero from "../components/shared/Hero/Hero";
 
-import heroImage from "../assets/images/home/group.jpg";
 import Pole from "../components/Home/Pole/Pole";
 import Footer from "../components/shared/Footer/Footer";
 import api from "../services/api";

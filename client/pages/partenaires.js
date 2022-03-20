@@ -2,8 +2,6 @@ import Head from "next/head";
 import Header from "../components/shared/Header/Header";
 import Hero from "../components/shared/Hero/Hero";
 
-import heroImage from "../assets/images/home/partenaires.jpg";
-
 import styles from "../styles/pages/Collaborators.module.scss";
 import { useState } from "react";
 import Collaborator from "../components/Collaborators/Collaborator";
