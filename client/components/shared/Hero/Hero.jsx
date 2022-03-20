@@ -13,6 +13,8 @@ import { useState } from "react";
 import cactus1 from "../../../assets/images/hero/cactus1.png";
 import cactus2 from "../../../assets/images/hero/cactus2.png";
 
+import { useMediaQuery } from "react-responsive";
+
 const Hero = ({
   imageURL,
   shadow,
@@ -28,6 +30,8 @@ const Hero = ({
   });
 
   const [loaded, setLoaded] = useState(false);
+
+  const isDesktop = useMediaQuery({ query: "(min-width:768px)" });
 
   const play = () => {
     stop();
@@ -45,7 +49,7 @@ const Hero = ({
       {isIndex ? (
         <div
           className={styles.imageContainer}
-          style={{ left: moveX, top: moveY }}
+          style={isDesktop ? { left: moveX, top: moveY } : {}}
         >
           <Image
             className={styles.heroImg}
@@ -69,7 +73,7 @@ const Hero = ({
         <div className={`${styles.cactusContainer} ${styles.a}`}>
           <div
             className={styles.cactus}
-            style={{ left: -moveX * 4, top: -moveY * 6 }}
+            style={isDesktop ? { left: -moveX * 4, top: -moveY * 6 } : {}}
           >
             <Image className={styles.cactusImg} src={cactus2} layout="fill" />
           </div>
@@ -79,7 +83,7 @@ const Hero = ({
         <div className={`${styles.cactusContainer} ${styles.b}`}>
           <div
             className={styles.cactus}
-            style={{ left: -moveX * 8, top: -moveY * 3 }}
+            style={isDesktop ? { left: -moveX * 8, top: -moveY * 3 } : {}}
           >
             <Image className={styles.cactusImg} src={cactus1} layout="fill" />
           </div>

@@ -17,7 +17,7 @@ export async function getStaticProps() {
   const res = await api.get("/accueil?populate=*");
 
   return {
-    props: { data: res.data.data.attributes }, // will be passed to the page component as props
+    props: { data: res.data.data.attributes }, revalidate: 10,// will be passed to the page component as props
   };
 }
 
@@ -68,7 +68,7 @@ export default function Home({ data }) {
               </h2>
 
               <p className={styles.paragraph}>{data.eventText}</p>
-              <Link href="/equipe">
+              <Link href="/programme">
                 <a className={styles.sectionLink}>
                   <span className="sectionLink">Voir les événements</span>
                   <BigArrow className={styles.arrow} />
