@@ -38,12 +38,6 @@ const Hero = ({
     playSound();
   };
 
-  const handleLoad = (e) => {
-    if (e.target.srcset) {
-      setLoaded(true);
-    }
-  };
-
   return (
     <section className={styles.hero}>
       {isIndex ? (
@@ -52,8 +46,9 @@ const Hero = ({
           style={isDesktop ? { left: moveX, top: moveY } : {}}
         >
           <Image
+            unoptimized={true}
             className={styles.heroImg}
-            onLoad={handleLoad}
+            onLoadingComplete={() => setLoaded(true)}
             src={imageURL}
             layout="fill"
           />
@@ -61,8 +56,9 @@ const Hero = ({
       ) : (
         <div className={styles.imageContainer}>
           <Image
+            unoptimized={true}
             className={styles.heroImg}
-            onLoad={handleLoad}
+            onLoadingComplete={() => setLoaded(true)}
             src={imageURL}
             layout="fill"
           />

@@ -28,6 +28,8 @@ export async function getStaticProps() {
 const Collaborators = ({ collaborators, pageData }) => {
   const [selected, setSelected] = useState(null);
 
+  // Si bug remplacer les 149.202.52.100 par localhost
+
   return (
     <>
       <Head>
@@ -38,7 +40,7 @@ const Collaborators = ({ collaborators, pageData }) => {
       <Header />
 
       <Hero
-        imageURL={`http://localhost:1337${pageData.bannerImg.data.attributes.url}`}
+        imageURL={`https://api.bdeluckyfox.fr${pageData.bannerImg.data.attributes.url}`}
         title={pageData.bannerTitle}
       />
 
@@ -58,13 +60,11 @@ const Collaborators = ({ collaborators, pageData }) => {
                 key={collaborator.id}
                 onClick={() => setSelected(collaborator)}
               >
-                {console.log(
-                  `http://localhost:1337${collaborator.attributes.logo.data[0].attributes.url}`
-                )}
                 <Image
+                  unoptimized={true}
                   layout="fill"
                   title={collaborator.attributes.name}
-                  src={`http://localhost:1337${collaborator.attributes.logo.data[0].attributes.url}`}
+                  src={`https://api.bdeluckyfox.fr${collaborator.attributes.logo.data[0].attributes.url}`}
                 />
               </div>
             ))}
@@ -82,10 +82,9 @@ const Collaborators = ({ collaborators, pageData }) => {
         </section>
         {selected && (
           <>
-            {console.log(selected.attributes.logo.data[0].attributes.url)}
             <Collaborator
               key={selected.id}
-              logoURL={`http://localhost:1337${selected.attributes.logo.data[0].attributes.url}`}
+              logoURL={`https://api.bdeluckyfox.fr${selected.attributes.logo.data[0].attributes.url}`}
               name={selected.attributes.name}
               field={selected.attributes.service}
               description={selected.attributes.description}

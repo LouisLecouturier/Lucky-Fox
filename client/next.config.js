@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "bdeluckyfox.fr"],
   },
   webpack(config, options) {
     config.module.rules.push({

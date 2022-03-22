@@ -27,7 +27,14 @@ const Member = ({ name, img, position, text, setIsShown }) => {
         <h1 className={styles.wanted}>WANTED</h1>
       </header>
       <div className={styles.imgContainer}>
-        {img && <Image src={img} className={styles.image} layout="fill" />}
+        {img && (
+          <Image
+            src={img}
+            unoptimized={true}
+            className={styles.image}
+            layout="fill"
+          />
+        )}
       </div>
       <article className={styles.content}>
         <Close className={styles.close} onClick={handleClose} />

@@ -29,15 +29,17 @@ const Event = ({ data }) => {
         <div className={styles.imageContainer}>
           <div className={styles.mobileImageContainer}>
             <Image
+              unoptimized={true}
               className={styles.image}
-              src={`http://localhost:1337${data.mobileImage.data.attributes.url}`}
+              src={`https://api.bdeluckyfox.fr${data.mobileImage.data.attributes.url}`}
               layout="fill"
             />
           </div>
           <div className={styles.desktopImageContainer}>
             <Image
+              unoptimized={true}
               className={styles.image}
-              src={`http://localhost:1337${data.desktopImage.data.attributes.url}`}
+              src={`https://api.bdeluckyfox.fr${data.desktopImage.data.attributes.url}`}
               layout="fill"
             />
           </div>

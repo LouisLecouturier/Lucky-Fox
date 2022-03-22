@@ -17,7 +17,8 @@ export async function getStaticProps() {
   const res = await api.get("/accueil?populate=*");
 
   return {
-    props: { data: res.data.data.attributes }, revalidate: 10,// will be passed to the page component as props
+    props: { data: res.data.data.attributes },
+    revalidate: 10, // will be passed to the page component as props
   };
 }
 
@@ -48,7 +49,7 @@ export default function Home({ data }) {
       <Header />
 
       <Hero
-        imageURL={`http://localhost:1337${data.bannerImg.data.attributes.url}`}
+        imageURL={`https://api.bdeluckyfox.fr${data.bannerImg.data.attributes.url}`}
         title={data.heroTitle}
         text={data.heroSubtitle}
         isIndex={true}
@@ -77,8 +78,9 @@ export default function Home({ data }) {
             </div>
             <div className={styles.sectionImgContainer}>
               <Image
+                unoptimized={true}
                 className={styles.sectionImg}
-                src={`http://localhost:1337${data.eventImage.data.attributes.url}`}
+                src={`https://api.bdeluckyfox.fr${data.eventImage.data.attributes.url}`}
                 layout="fill"
               />
             </div>
@@ -91,8 +93,9 @@ export default function Home({ data }) {
           <div className="sectionRow">
             <div className={styles.sectionImgContainer}>
               <Image
+                unoptimized={true}
                 className={styles.sectionImg}
-                src={`http://localhost:1337${data.teamImage.data.attributes.url}`}
+                src={`https://api.bdeluckyfox.fr${data.teamImage.data.attributes.url}`}
                 layout="fill"
               />
             </div>
@@ -131,8 +134,9 @@ export default function Home({ data }) {
             </div>
             <div className={styles.sectionImgContainer}>
               <Image
+                unoptimized={true}
                 className={styles.sectionImg}
-                src={`http://localhost:1337${data.partnersImage.data.attributes.url}`}
+                src={`https://api.bdeluckyfox.fr${data.partnersImage.data.attributes.url}`}
                 layout="fill"
               />
             </div>

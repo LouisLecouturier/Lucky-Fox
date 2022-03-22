@@ -5,7 +5,7 @@ import Poster from "../../../assets/misc/poster.svg";
 import useSound from "use-sound";
 import { useEffect, useState } from "react";
 import Member from "../Member/Member";
-import api from "../../../services/api";
+import inAppApi from "../../../services/inAppApi";
 import Image from "next/image";
 
 const Wanted = ({ id, name, position, text }) => {
@@ -40,13 +40,12 @@ const Wanted = ({ id, name, position, text }) => {
   const [animation, setAnimation] = useState(false);
 
   useEffect(() => {
-    id &&
-      api.get(`/membres/${id}?populate=*`).then((res) => {
-        setImageUrl(
-          `http://localhost:1337${res.data.data.attributes.image.data.attributes.url}`
-        );
-      });
-  }, []);
+    inAppApi.get(`/membres/${id}?populate=*`).then((res) => {
+      setImageUrl(
+        `https://api.bdeluckyfox.fr${res.data.data.attributes.image.data.attributes.url}`
+      );
+    });
+  }, [id]);
 
   return (
     <>
@@ -72,7 +71,12 @@ const Wanted = ({ id, name, position, text }) => {
           <h2 className={styles.wanted}>WANTED</h2>
           <div className={styles.imgContainer}>
             {imageUrl && (
-              <Image className={styles.img} src={imageUrl} layout="fill" />
+              <Image
+                className={styles.img}
+                unoptimized={true}
+                src={imageUrl}
+                layout="fill"
+              />
             )}
           </div>
           <div className={styles.thumbnailContent}>

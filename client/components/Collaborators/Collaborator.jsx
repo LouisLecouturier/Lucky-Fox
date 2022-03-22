@@ -47,7 +47,6 @@ const Collaborator = ({
         <article className={styles.popup}>
           <div ref={button}></div>
           <header className={styles.header}>
-            
             <img className={styles.logo} src={logoURL} />
 
             <div className={styles.headerContent}>

@@ -31,7 +31,7 @@ const Program = ({ data, pageData }) => {
       </Head>
       <Header />
       <Hero
-        imageURL={`http://localhost:1337${pageData.bannerImg.data.attributes.url}`}
+        imageURL={`https://api.bdeluckyfox.fr${pageData.bannerImg.data.attributes.url}`}
         shadow={true}
         isProgram={true}
         title={pageData.bannerTitle}
@@ -48,9 +48,11 @@ const Program = ({ data, pageData }) => {
                   <Link href={`/event/${event.id}`}>
                     <a className={styles.eventImage}>
                       <Image
-                        src={`http://localhost:1337${event.attributes.mobileImage.data.attributes.url}`}
+                        unoptimized={true}
+                        objectFit={"cover"}
+                        src={`https://api.bdeluckyfox.fr${event.attributes.mobileImage.data.attributes.url}`}
                         layout="fill"
-                      />{" "}
+                      />
                     </a>
                   </Link>
                   <div>

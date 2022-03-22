@@ -25,7 +25,7 @@ const Equipe = ({ poles, pageData }) => {
       <Header />
 
       <Hero
-        imageURL={`http://localhost:1337${pageData.bannerImg.data.attributes.url}`}
+        imageURL={`https://api.bdeluckyfox.fr${pageData.bannerImg.data.attributes.url}`}
         title={pageData.bannerTitle}
       />
 

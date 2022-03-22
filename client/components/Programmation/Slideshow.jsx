@@ -90,16 +90,18 @@ const Slideshow = ({ events }) => {
                   <div className={styles.imageContainer}>
                     <div className={styles.desktopImgContainer}>
                       <Image
+                        unoptimized={true}
                         className={styles.desktopImg}
                         layout="fill"
-                        src={`http://localhost:1337${events[0].attributes.desktopImage.data.attributes.url}`}
+                        src={`https://api.bdeluckyfox.fr${events[0].attributes.desktopImage.data.attributes.url}`}
                       />
                     </div>
                     <div className={styles.mobileImgContainer}>
                       <Image
+                        unoptimized={true}
                         className={styles.mobileImg}
                         layout="fill"
-                        src={`http://localhost:1337${events[0].attributes.mobileImage.data.attributes.url}`}
+                        src={`https://api.bdeluckyfox.fr${events[0].attributes.mobileImage.data.attributes.url}`}
                       />
                     </div>
                   </div>
@@ -138,16 +140,18 @@ const Slideshow = ({ events }) => {
                       <div className={styles.imageContainer}>
                         <div className={styles.desktopImgContainer}>
                           <Image
+                            unoptimized={true}
                             className={styles.desktopImg}
                             layout="fill"
-                            src={`http://localhost:1337${event.attributes.desktopImage.data.attributes.url}`}
+                            src={`https://api.bdeluckyfox.fr${event.attributes.desktopImage.data.attributes.url}`}
                           />
                         </div>
                         <div className={styles.mobileImgContainer}>
                           <Image
+                            unoptimized={true}
                             className={styles.mobileImg}
                             layout="fill"
-                            src={`http://localhost:1337${event.attributes.mobileImage.data.attributes.url}`}
+                            src={`https://api.bdeluckyfox.fr${event.attributes.mobileImage.data.attributes.url}`}
                           />
                         </div>
                       </div>
